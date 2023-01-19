@@ -1,0 +1,24 @@
+<div class="container">
+<div *ngIf="hero">
+    <h2>{{ hero.name }}</h2>
+    <div class="row">
+        <label class="col-3 form-label">Name:</label>
+        <input class="col-auto form-control" [(ngModel)] = "hero.name" placeholder="Name" />
+    </div>
+    <div class="row">
+        <label class="col-3 form-label">First Name:</label>
+        <input class="col-auto form-control" [(ngModel)] = "hero.firstName" placeholder="First Name" />
+    </div>
+    <div class="row">
+        <label class="col-3 form-label">Last Name:</label>
+        <input class="col-auto form-control" [(ngModel)] = "hero.lastName" placeholder="Last Name" />
+    </div>
+    <div class="row mb-3">
+        <label class="col-3 form-label">Place:</label>
+        <input class="col-auto form-control" [(ngModel)] = "hero.place" placeholder="Place" />
+    </div>
+    <button class="btn btn-warning me-3" (click)="updateHero(hero)" *ngIf="hero.id">Save</button>
+    <button class="btn btn-danger" (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>
+    <button class="btn btn-warning" (click)="createHero(hero)" *ngIf="!hero.id">Create</button>
+</div>
+</div>
